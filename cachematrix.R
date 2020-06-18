@@ -27,8 +27,9 @@ makeCacheMatrix <- function(x = matrix()) {
 cacheSolve <- function(x, ...) {
   if(NCOL(x$get())==NROW(x$get()) && det(x$get())!=0){
     inv <- x$getInverse()
+    
     if(!is.null(inv)) {
-      message("getting cached data")
+      message("getting cached data")   ## This segment retrieves the value of the inverse, if any
       return(inv)
     }
     else{
